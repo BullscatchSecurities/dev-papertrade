@@ -32,7 +32,7 @@ class PlaceOrderRequest(BaseModel):
 @app.post("/placeorder")
 def place_order(request: PlaceOrderRequest):
     order_id = str(uuid.uuid4())
-    data = getData(request.TradingSymbol, "minute", request.Exchange, nbars=1)
+    data = getData(request.TradingSymbol, "1m", request.Exchange, nbars=1)
 
     print(data)
 
